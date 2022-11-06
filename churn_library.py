@@ -173,7 +173,7 @@ def classification_report_image(y_train,
     save_path = './images/results/'
 
     print('Saving Random Forest results plot')
-    plt.figure(figsize=(5,5))
+    plt.figure(figsize=(5, 5))
     # plt.rc('figure', figsize=(5, 5))
     plt.text(0.01, 1.25, str('Random Forest Train'),
              {'fontsize': 10},
@@ -194,7 +194,7 @@ def classification_report_image(y_train,
     plt.savefig(save_path + 'rf_results.png')
 
     print('Saving Logistic Regression results plot')
-    plt.figure(figsize=(5,5))
+    plt.figure(figsize=(5, 5))
     # plt.rc('figure', figsize=(5, 5))
     plt.text(0.01, 1.25, str('Logistic Regression Train'),
              {'fontsize': 10}, fontproperties='monospace')

@@ -211,16 +211,6 @@ def classification_report_image(y_train,
     plt.axis('off')
     plt.savefig(save_path + 'lr_results.png')
 
-    rfc_model = joblib.load('./models/rfc_model.pkl')
-    lr_model = joblib.load('./models/logistic_model.pkl')
-
-    lrc_plot = plot_roc_curve(lr_model, X_test, y_test)
-    plt.figure(figsize=(15, 8))
-    ax = plt.gca()
-    rfc_disp = plot_roc_curve(rfc_model, X_test, y_test, ax=ax, alpha=0.8)
-    lrc_plot.plot(ax=ax, alpha=0.8)
-    plt.savefig(save_path + 'roc_curve_result.png')
-
 
 def feature_importance_plot(model, X_data, output_pth):
     '''
@@ -268,6 +258,8 @@ def train_models(X_train, X_test, y_train, y_test):
     output:
               None
     '''
+    save_path = './images/results/'
+
     # grid search
     rfc = RandomForestClassifier(random_state=42)
     # Use a different solver if the default 'lbfgs' fails to converge
@@ -305,6 +297,17 @@ def train_models(X_train, X_test, y_train, y_test):
                                 y_test_preds_rf)
 
     feature_importance_plot(cv_rfc, X_train, './images/results/')
+
+    rfc_model = joblib.load('./models/rfc_model.pkl')
+    lr_model = joblib.load('./models/logistic_model.pkl')
+
+    # Create ROC plots and save to results folder
+    lrc_plot = plot_roc_curve(lr_model, X_test, y_test)
+    plt.figure(figsize=(15, 8))
+    ax = plt.gca()
+    rfc_disp = plot_roc_curve(rfc_model, X_test, y_test, ax=ax, alpha=0.8)
+    lrc_plot.plot(ax=ax, alpha=0.8)
+    plt.savefig(save_path + 'roc_curve_result.png')
 
 
 if __name__ == '__main__':

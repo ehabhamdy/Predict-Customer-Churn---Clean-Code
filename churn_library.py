@@ -1,12 +1,15 @@
-''' Churn library
-    The script provide an end to end machine learning model development
-    and training pipeline for predicting customer churn with the
-    following functionalities:
-        * Importing customer data into a pandas data frame
-        * Perform EDA
-        * Perform feature selection for the model training
-        * Train Logistic Regression and Random Forest model
-        * Save model artifacts and results plot in the project directoy
+'''
+The *churn_library.py* is a library of functions to find customers who are
+likely to churn.
+The library core functionalities are as follows:
+    * Importing customer data into a pandas data frame
+    * Perform EDA
+    * Perform feature selection for the model training
+    * Train Logistic Regression and Random Forest model
+    * Save model artifacts and results plot in the project directoy
+
+Author: Ehab Hussein
+Creation Date: 7/11/2022
 '''
 
 

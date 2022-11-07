@@ -3,7 +3,20 @@
 - Project **Predict Customer Churn** of ML DevOps Engineer Nanodegree Udacity
 
 ## Project Description
-This project is intended to train a model capable of detect customer churn rates. 
+Customer churn is defined as the loss of existing customers. The project purpose is to build, train and ability 
+to forecast customers who are likely to churn or in other words finding out customers who are going to
+close their accounts. In this project we have applied software engineering and clean code best practices
+to transfrom the code developed in the jupyter notebook into a reusable and testable library reliable for
+production use.
+
+## Dataset
+We have utilized the kaggle data set for the `Credit Card Customer Churn Prediction` competition.
+This dataset represent records of credit card customers. 
+It contains 10,127 instances (customers) and 16.0% of them are attrited.
+
+For more details, please visit:
+https://www.kaggle.com/c/1056lab-credit-card-customer-churn-prediction
+
 
 ## Files and data description
 The project consists of the following files:

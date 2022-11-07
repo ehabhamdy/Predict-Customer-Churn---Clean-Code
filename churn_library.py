@@ -1,4 +1,13 @@
-# library doc string
+''' Churn library
+    The script provide an end to end machine learning model development
+    and training pipeline for predicting customer churn with the
+    following functionalities:
+        * Importing customer data into a pandas data frame
+        * Perform EDA
+        * Perform feature selection for the model training
+        * Train Logistic Regression and Random Forest model
+        * Save model artifacts and results plot in the project directoy
+'''
 
 
 # import libraries

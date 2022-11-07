@@ -102,7 +102,7 @@ def encoder_helper(df, category_lst, response=[]):
             df: pandas dataframe with new columns for
     '''
     df['Churn'] = df['Attrition_Flag'].apply(
-                lambda val: 0 if val == "Existing Customer" else 1)
+        lambda val: 0 if val == "Existing Customer" else 1)
 
     for category in category_lst:
         category_lst = []

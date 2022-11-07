@@ -133,4 +133,4 @@ if __name__ == "__main__":
 
     test_perform_feature_engineering(cls.perform_feature_engineering)
 
-    # test_train_models(cls.train_models)
+    test_train_models(cls.train_models)

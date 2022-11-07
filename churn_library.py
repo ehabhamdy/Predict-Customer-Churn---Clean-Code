@@ -104,14 +104,10 @@ def encoder_helper(df, category_lst):
     df['Churn'] = df['Attrition_Flag'].apply(
         lambda val: 0 if val == "Existing Customer" else 1)
 
-    for category in category_lst:
-        category_lst = []
-        category_groups = df.groupby(category).mean()['Churn']
-
-        for val in df[category]:
-            category_lst.append(category_groups.loc[val])
-
-        df[category + '_Churn'] = category_lst
+    suffix = '_Churn'
+    for col in category_lst:
+        new_col = col + suffix
+        df[new_col] = df.groupby(col)["Churn"].transform("mean")
 
     return df
 

@@ -25,6 +25,7 @@ Perform the following steps to prepare your environment with the required depend
 There are two options to run the project:
 1. Use the notebooks and executes each celll to perform the necessary steps.
 2. Use the `churn_library.py`, In your terminal windows, run `python chun_library.py`
+3. For testing the churn library, you can run `python churn_script_logging_and_test.py` The results is savved under ./logs/churn_library.log
 
 
 ### Expected Output

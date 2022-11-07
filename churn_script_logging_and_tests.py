@@ -1,10 +1,17 @@
+'''
+Testing script for the churn library
+
+Author: Ehab Hussein
+Creation Date: 7/11/2022
+'''
+
 import logging
 import churn_library as cls
 import glob
-
+import time
 
 logging.basicConfig(
-    filename='./logs/churn_library.log',
+    filename=f"./logs/churn_library_{time.strftime('%b_%d_%Y_%H_%M_%S')}.log",
     level=logging.INFO,
     filemode='w',
     format='%(name)s - %(levelname)s - %(message)s')
@@ -126,4 +133,4 @@ if __name__ == "__main__":
 
     test_perform_feature_engineering(cls.perform_feature_engineering)
 
-    test_train_models(cls.train_models)
+    # test_train_models(cls.train_models)

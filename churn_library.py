@@ -12,7 +12,6 @@
 
 # import libraries
 import os
-import shap
 import joblib
 import pandas as pd
 import numpy as np
@@ -86,7 +85,7 @@ def perform_eda(df):
     plt.savefig(save_path + '/heatmap.png')
 
 
-def encoder_helper(df, category_lst, response=[]):
+def encoder_helper(df, category_lst):
     '''
     helper function to turn each categorical column into a new column with
     propotion of churn for each category - associated with cell 15 from the
@@ -95,8 +94,6 @@ def encoder_helper(df, category_lst, response=[]):
     input:
             df: pandas dataframe
             category_lst: list of columns that contain categorical features
-            response: string of response name [optional argument that could
-                      be used for naming variables or index y column]
 
     output:
             df: pandas dataframe with new columns for
@@ -116,12 +113,10 @@ def encoder_helper(df, category_lst, response=[]):
     return df
 
 
-def perform_feature_engineering(df, response=[]):
+def perform_feature_engineering(df):
     '''
     input:
               df: pandas dataframe
-              response: string of response name [optional argument that
-                        could be used for naming variables or index y column]
 
     output:
               X_train: X training data
@@ -320,8 +315,8 @@ def train_models(X_train, X_test, y_train, y_test):
 
 
 if __name__ == '__main__':
-    data_path = './data/bank_data.csv'
-    df = import_data(data_path)
+    DATA_PATH = './data/bank_data.csv'
+    df = import_data(DATA_PATH)
 
     perform_eda(df)
 
